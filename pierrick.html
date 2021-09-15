@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisation du code</title>
+    <link rel="stylesheet" href="pierrick.css">
+</head>
+<body>
+    <div id="route-creator">
+        <h1>créer une route</h1>
+        <label for="action">Action :</label>
+        <select name="action" id="action">
+            <option value="get">get</option>
+            <option value="post">post</option>
+            <option value="update">update</option>
+            <option value="delete">delete</option>
+        </select>
+        <label for="custom_url">URL (exemple : /test/{variable}) :</label>
+        <input type="text" id="custom_url" name="custom_url">
+        <label for="routeController">Le nom du controller :</label>
+        <input type="text" id="routeController" name="routeController">
+        <label for="method">Le nom de la méthode :</label>
+        <input type="text" id="method" name="method">
+        <button onclick="generateRoute()">Générer</button><br>
+    </div>
+
+    <div id="route"></div>
+
+    <div id="migration-creator">
+        <h1>Créer une migration</h1>
+        <label for="type">Type :</label>
+        <select name="type" id="type">
+            <option value="int">int</option>
+            <option value="string">string</option>
+            <option value="bigint">bigint</option>
+            <option value="boolean">boolean</option>
+        </select>
+        <label for="column">Nom de la colonne :</label>
+        <input type="text" id="column" name="column">
+
+        <input type="checkbox" id="default" name="default" value="default">
+        <label for="default"> default</label>
+        <span id="migration_default">
+            <label for="default_value"> Valeur par défaut :</label>
+            <input type="text" id="default_value" name="default_value">
+        </span>
+
+        <input type="checkbox" id="unsigned" name="unsigned" value="unsigned">
+        <label for="unsigned"> unsigned</label>
+
+        <input type="checkbox" id="foreign" name="foreign" value="foreign">
+        <label for="foreign"> clef étrangère</label>
+        <span id="migration_foreign">
+            <label for="table"> Table référence :</label>
+            <input type="text" id="table" name="table">
+            <label for="column_ref"> Colonne référence :</label>
+            <input type="text" id="column_ref" name="column_ref">
+        </span>
+
+        <button onclick="generateMigration()">Générer</button><br>
+    </div>
+
+    <div id="migration"></div>
+
+    <div id="controller-creator">
+        <h1>Controller</h1>
+        <h3>Récupérer une liste d'objets</h3>
+        <label for="model_name">Nom du modèle :</label>
+        <input type="text" id="model_name" name="model_name">
+        <label for="variableGet">Nom de la variable à générer</label>
+        <input type="text" id="variableGet" name="variableGet">
+
+        <input type="checkbox" id="orderBy" name="orderBy" value="orderBy">
+        <label for="orderBy"> order by</label>
+        <span id="order_by">
+            <label for="orderByCol"> Colonne :</label>
+            <input type="text" id="orderByCol" name="orderByCol">
+        </span>
+
+        <button onclick="generateControllerGet()">Générer</button><br>
+
+    </div>
+
+    <div id="controller"></div>
+
+
+
+
+
+    <div id="resultat">
+
+    </div>
+
+    <script src="pierrick.js"></script>
+</body>
+</html>
