@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="pierrick.css">
 </head>
 <body>
-    <div id="route-creator">
-        <h1>créer une route</h1>
+    <div id="route-creator" class="creator">
+        <h1>créer une route (routes/web.php)</h1>
         <label for="action">Action :</label>
         <select name="action" id="action">
             <option value="get">get</option>
@@ -19,17 +19,18 @@
         </select>
         <label for="custom_url">URL (exemple : /test/{variable}) :</label>
         <input type="text" id="custom_url" name="custom_url">
-        <label for="routeController">Le nom du controller :</label>
+        <label for="routeController">Le nom du controller (TaskController):</label>
         <input type="text" id="routeController" name="routeController">
         <label for="method">Le nom de la méthode :</label>
         <input type="text" id="method" name="method">
         <button onclick="generateRoute()">Générer</button><br>
     </div>
 
-    <div id="route"></div>
+    <div id="route" class="result"></div>
 
-    <div id="migration-creator">
-        <h1>Créer une migration</h1>
+    <div id="migration-creator" class="creator">
+        <h1>Créer une migration (/app/database/migrations)</h1>
+        <h3 class="console">Console : php artisan make:migration create_tasks</h3>
         <label for="type">Type :</label>
         <select name="type" id="type">
             <option value="integer">int</option>
@@ -62,10 +63,18 @@
         <button onclick="generateMigration()">Générer</button><br>
     </div>
 
-    <div id="migration"></div>
+    <div id="migration" class="result"></div>
 
-    <div id="controller-creator">
-        <h1>Controller</h1>
+    <div id="model-creator" class="creator">
+        <h1>Créer un model (app/Models)</h1>
+        <h3 class="console">Console : php artisan make:model TaskModel</h3>
+    </div>
+
+    <div id="model" class="result"></div>
+
+    <div id="controller-creator" class="creator">
+        <h1>Créer un controller (app/Http/Controllers)</h1>
+        <h3 class="console">Console : php artisan make:controller TaskController</h3>
         <h3>Récupérer une liste d'objets</h3>
         <label for="model_name">Nom du modèle :</label>
         <input type="text" id="model_name" name="model_name">
@@ -83,7 +92,7 @@
 
     </div>
 
-    <div id="controller"></div>
+    <div id="controller" class="result"></div>
 
 
 

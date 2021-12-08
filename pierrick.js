@@ -1,9 +1,3 @@
-function generateRoute() {
-    document.getElementById('route').innerHTML += "Route::" + action.value + "('" + custom_url.value + "', '" + routeController.value 
-    + "@" +  method.value + "');<br>";
-    // custom_url.value + controller.value + method.value;
-}
-
 var isMigrationDefaultChecked = document.querySelector("input[name=default]");
 var isMigrationForeignChecked = document.querySelector("input[name=foreign]");
 var isOrderByChecked = document.querySelector("input[name=orderBy]");
@@ -30,6 +24,16 @@ isOrderByChecked.addEventListener( 'change', function() {
         order_by.style.display = "none";
     }
 });
+
+function generateRoute() {    
+    count = parseInt(document.querySelectorAll(".routes").length)+1;
+    item = document.createElement("p");
+    item.className = "routes";
+    item.id = "route" + count;
+    item.innerHTML += "Route::" + action.value + "('" + custom_url.value + "', '" + routeController.value + "@" +  method.value + "');<br>";
+    document.getElementById('route').appendChild(item);
+    // custom_url.value + controller.value + method.value;
+}
 
 function generateMigration() {
     document.getElementById('migration').innerHTML += "$table->" + type.value + "('" + column.value + "')";

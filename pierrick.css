@@ -1,5 +1,20 @@
+.creator {
+    border: 1px solid black;
+    margin: 1rem;
+    text-align: center;
+}
 
+.result {
+    border: 3px solid purple;
+    margin: 1rem;
+}
 
+.console {
+    border: 1px solid green;
+    /* color: white; */
+    background: rgba(26, 112, 26, 0.4);
+    margin: 1rem;
+}
 
 #migration_default {
     display: none;
